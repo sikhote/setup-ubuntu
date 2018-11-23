@@ -8,7 +8,6 @@ wget https://github.com/sikhote/setup-ubuntu/archive/master.zip
 unzip master.zip
 rm -rf master.zip
 chmod +x setup-ubuntu-master/moose.sh; .setup-ubuntu-master/moose.sh
-setup-ubuntu-master
 ```
 
 ## post install

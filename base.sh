@@ -60,12 +60,17 @@ yes | cp fonts/* ~/.fonts
 sudo fc-cache -fv
 
 echo 'atom'
-apm install --packages-file atom/packages.txt
-yes | cp atom/config.cson ~/.atom/config.cson
-yes | cp atom/styles.less ~/.atom/styles.less
+flatpak run --command=apm io.atom.Atom install --packages-file atom/packages.txt
+cd ~/Downloads/setup-ubuntu-master/
+mkdir -p ~/.atom
 
-echo 'hyper'
-yes | cp hyper.js ~/.hyper.js
+yes | cp atom/config.cson ~/.var/app/io.atom.Atom/data/config.cson
+yes | cp atom/styles.less ~/.var/app/io.atom.Atom/data/styles.less
 
 echo 'desktop'
+cd ~/Downloads/setup-ubuntu-master/
 yes | cp desktop.jpg ~/Pictures
+
+echo 'cleanup'
+cd ~/
+rm -rf ~/Downloads/setup-ubuntu-master
