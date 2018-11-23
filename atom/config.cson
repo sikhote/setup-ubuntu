@@ -19,6 +19,7 @@
     destroyEmptyPanes: false
     disabledPackages: [
       "whitespace"
+      "markdown-preview"
     ]
     ignoredNames: [
       ".DS_Store"
@@ -43,9 +44,10 @@
     softWrapHangingIndent: 2
   "exception-reporting":
     userId: "56e4d23d-1c1d-3c4d-fed2-fad278567df5"
+  "git-blame":
+    columnWidth: 324
   "highlight-selected": {}
   "language-babel":
-    autoIndentJSX: true
     createTargetDirectories: false
     suppressTranspileOnSaveMessages: false
     taggedTemplateGrammar: [
@@ -53,11 +55,12 @@
     ]
   linter: {}
   "linter-eslint":
-    fixOnSave: true
     globalNodePath: "/Users/david/.nvm/versions/node/v8.5.0"
     lintHtmlFiles: true
   "linter-ui-default":
-    panelHeight: 138
+    panelHeight: 125
+    showPanel: true
+    showTooltip: false
   "markdown-preview-plus": {}
   navigate: {}
   "one-dark-ui":
@@ -92,6 +95,7 @@
     toggles:
       autoClose: true
       runInsertedText: false
+      selectToCopy: false
   "prettier-atom":
     formatOnSaveOptions:
       isDisabledIfNotInPackageJson: true

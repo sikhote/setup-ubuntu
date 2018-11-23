@@ -1,57 +1,62 @@
-echo 'app-get'
-sudo apt-get install git
-sudo apt-get install chromium
+sudo apt-get update
+sudo apt-get upgrade -d
 
 echo 'git'
+sudo apt-get -y install git
 git config --global user.name "David Sinclair"
 git config --global user.email "david@sinclair.tech"
 
-echo 'hyper'
-wget https://releases.hyper.is/download/deb -O ~/Downloads/hyper.deb
-sudo apt-get install ~/Downloads/hyper.deb
-rm -rf ~/Downloads/hyper.deb
+echo 'chrome'
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i ./google-chrome*.deb
+rm -rf google-chrome-stable_current_amd64.deb
 
 echo 'flatpak'
-sudo add-apt-repository ppa:alexlarsson/flatpak
+sudo add-apt-repository ppa:alexlarsson/flatpak -y
 sudo apt update
-sudo apt install flatpak
+sudo apt install -y flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 echo 'flatpak apps'
-flatpak install flathub io.atom.Atom
-flatpak install flathub com.dropbox.Client
-flatpak install flathub org.videolan.VLC
-flatpak install flathub com.transmissionbt.Transmission
-flatpak install flathub com.getpostman.Postman
+flatpak install -y flathub io.atom.Atom
+flatpak install -y flathub com.dropbox.Client
+flatpak install -y flathub org.videolan.VLC
+flatpak install -y flathub com.transmissionbt.Transmission
+flatpak install -y flathub com.getpostman.Postman
+flatpak install -y flathub com.valvesoftware.Steam
 
 echo 'nvm'
+sudo apt install -y curl
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-source ~/.bash_profile
-nvm install 8
-nvm alias default 8
+source ~/.bashrc
+nvm install 10
+nvm alias default 10
 
 echo 'yarn'
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update
-sudo apt-get install --no-install-recommends yarn
+sudo apt-get install -y --no-install-recommends yarn
 
 echo 'bash-git-prompt'
+cd ~/
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
 
 echo "projects"
 mkdir -p ~/Projects
 
 echo "awscli"
-sudo apt-get install python-pip
+sudo apt-get install -y python-pip
 pip install awscli --upgrade --user
 
 echo 'bash_profile'
-yes | cp bash_profile ~/.bash_profile
-yes | cp Solarized_Extravagant.bgptheme /usr/local/opt/bash-git-prompt/share/themes/Solarized_Extravagant.bgptheme
+cat ~/Downloads/setup-ubuntu-master/bash >> ~/.bashrc
+yes | cp ~/Downloads/setup-ubuntu-master/Solarized_Extravagant.bgptheme ~/.bash-git-prompt/themes/Solarized_Extravagant.bgptheme
+source ~/.bashrc 
 
 echo 'fonts'
-yes | cp fonts/* ~/usr/local/share/fonts
+mkdir -p ~/.fonts
+yes | cp fonts/* ~/.fonts
 sudo fc-cache -fv
 
 echo 'atom'

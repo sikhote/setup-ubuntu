@@ -17,7 +17,7 @@ linter-eslint
 linter-jsonlint
 linter-tslint
 linter-ui-default
-markdown-preview-plus
+linter-xo
 open-recent
 pigments
 platformio-ide-terminal
