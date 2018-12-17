@@ -9,6 +9,7 @@ git config --global user.email "david@sinclair.tech"
 echo 'chrome'
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i ./google-chrome*.deb
+sudo apt -f install
 rm -rf google-chrome-stable_current_amd64.deb
 
 echo 'flatpak'
@@ -62,6 +63,7 @@ echo 'vscode'
 cd ~/Downloads/setup-ubuntu-master/
 curl -o code.deb -L http://go.microsoft.com/fwlink/?LinkID=760868
 sudo dpkg -i ./code.deb
+sudo apt -f install
 rm -rf code.deb
 code --install-extension blanu.vscode-styled-jsx
 code --install-extension dbaeumer.vscode-eslint
