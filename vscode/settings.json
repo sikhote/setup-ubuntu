@@ -1,0 +1,17 @@
+{
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.startupEditor": "newUntitledFile",
+  "window.nativeTabs": true,
+  "editor.rulers": [
+      80
+  ],
+  "explorer.sortOrder": "mixed",
+  "editor.snippetSuggestions": "top",
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "indent",
+  "xo.enable": true,
+  "explorer.confirmDragAndDrop": true,
+  "terminal.integrated.shell.linux": "/bin/bash",
+  "explorer.confirmDelete": false,
+  "window.restoreWindows": "all"
+}

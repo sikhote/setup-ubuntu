@@ -23,7 +23,6 @@ flatpak install -y flathub org.videolan.VLC
 flatpak install -y flathub com.transmissionbt.Transmission
 flatpak install -y flathub com.getpostman.Postman
 flatpak install -y flathub com.valvesoftware.Steam
-flatpak install -y flathub com.visualstudio.code.oss
 
 echo 'nvm'
 sudo apt install -y curl
@@ -37,10 +36,6 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update && sudo apt-get install --no-install-recommends yarn
 
-echo 'bash-git-prompt'
-cd ~/
-git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
-
 echo "projects"
 mkdir -p ~/Projects
 
@@ -48,8 +43,11 @@ echo "awscli"
 sudo apt-get install -y python-pip
 pip install awscli --upgrade --user
 
+echo 'bash-git-prompt'
+cd ~/
+git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
+
 echo 'bash'
-# append to .bashrc
 cat ~/Downloads/setup-ubuntu-master/bash >> ~/.bashrc
 yes | cp ~/Downloads/setup-ubuntu-master/Solarized_Extravagant.bgptheme ~/.bash-git-prompt/themes/Solarized_Extravagant.bgptheme
 source ~/.bashrc
@@ -60,9 +58,21 @@ mkdir -p ~/.fonts
 yes | cp fonts/* ~/.fonts/
 sudo fc-cache -fv
 
-echo 'vs code'
+echo 'vscode'
 cd ~/Downloads/setup-ubuntu-master/
-
+curl -o code.deb -L http://go.microsoft.com/fwlink/?LinkID=760868
+sudo dpkg -i ./code.deb
+rm -rf code.deb
+code --install-extension blanu.vscode-styled-jsx
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension EditorConfig.EditorConfig
+code --install-extension esbenp.prettier-vscode
+code --install-extension naumovs.color-highlight
+code --install-extension PeterJausovec.vscode-docker
+code --install-extension samverschueren.linter-xo
+mkdir -p ~/.config/Code/User/snippets
+yes | cp vscode/settings.json ~/.config/Code/User/
+yes | cp vscode/snippets/* ~/.config/Code/User/snippets/
 
 echo 'desktop'
 cd ~/Downloads/setup-ubuntu-master/
