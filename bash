@@ -1,9 +1,5 @@
-
-GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_THEME=Solarized_Extravagant
 source ~/.bash-git-prompt/gitprompt.sh
-
-export PATH="$PATH:/usr/bin/yarn"
 
 alias gits="git status"
 alias gita="git add -A"
