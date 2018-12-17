@@ -18,12 +18,12 @@ sudo apt install -y flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 echo 'flatpak apps'
-flatpak install -y flathub io.atom.Atom
 flatpak install -y flathub com.dropbox.Client
 flatpak install -y flathub org.videolan.VLC
 flatpak install -y flathub com.transmissionbt.Transmission
 flatpak install -y flathub com.getpostman.Postman
 flatpak install -y flathub com.valvesoftware.Steam
+flatpak install -y flathub com.visualstudio.code.oss
 
 echo 'nvm'
 sudo apt install -y curl
@@ -35,8 +35,7 @@ nvm alias default 10
 echo 'yarn'
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update
-sudo apt-get install -y --no-install-recommends yarn
+sudo apt-get update && sudo apt-get install --no-install-recommends yarn
 
 echo 'bash-git-prompt'
 cd ~/
@@ -49,27 +48,29 @@ echo "awscli"
 sudo apt-get install -y python-pip
 pip install awscli --upgrade --user
 
-echo 'bash_profile'
+echo 'bash'
+# append to .bashrc
 cat ~/Downloads/setup-ubuntu-master/bash >> ~/.bashrc
 yes | cp ~/Downloads/setup-ubuntu-master/Solarized_Extravagant.bgptheme ~/.bash-git-prompt/themes/Solarized_Extravagant.bgptheme
-source ~/.bashrc 
+source ~/.bashrc
 
 echo 'fonts'
+cd ~/Downloads/setup-ubuntu-master
 mkdir -p ~/.fonts
-yes | cp fonts/* ~/.fonts
+yes | cp fonts/* ~/.fonts/
 sudo fc-cache -fv
 
-echo 'atom'
-flatpak run --command=apm io.atom.Atom install --packages-file atom/packages.txt
+echo 'vs code'
 cd ~/Downloads/setup-ubuntu-master/
-mkdir -p ~/.atom
 
-yes | cp atom/config.cson ~/.var/app/io.atom.Atom/data/config.cson
-yes | cp atom/styles.less ~/.var/app/io.atom.Atom/data/styles.less
 
 echo 'desktop'
 cd ~/Downloads/setup-ubuntu-master/
 yes | cp desktop.jpg ~/Pictures
+
+echo 'sdk'
+curl -s "https://get.sdkman.io" | bash
+sdk install java
 
 echo 'cleanup'
 cd ~/
