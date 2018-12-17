@@ -81,7 +81,3 @@ yes | cp desktop.jpg ~/Pictures
 echo 'sdk'
 curl -s "https://get.sdkman.io" | bash
 sdk install java
-
-echo 'cleanup'
-cd ~/
-rm -rf ~/Downloads/setup-ubuntu-master

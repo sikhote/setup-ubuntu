@@ -11,12 +11,6 @@ chmod +x setup-ubuntu-master/moose.sh; .setup-ubuntu-master/moose.sh
 ```
 
 ## post install
-- run `rm -rf ~/Downloads/setup`
+- delete folder
 - configure: dropbox, chrome, firefox, transmission
 - add ssh key
-
-## save
-`chmod +x ./save.sh; ./save.sh`
-
-## post save
-- backup downloads
