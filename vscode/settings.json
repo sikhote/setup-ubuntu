@@ -13,5 +13,6 @@
   "explorer.confirmDragAndDrop": true,
   "terminal.integrated.shell.linux": "/bin/bash",
   "explorer.confirmDelete": false,
-  "window.restoreWindows": "all"
+  "window.restoreWindows": "all",
+  "editor.fontFamily": "'Meslo LG L', 'monospace', monospace"
 }
