@@ -13,4 +13,5 @@ chmod +x setup-ubuntu-master/moose.sh; .setup-ubuntu-master/moose.sh
 ## post install
 - delete folder
 - configure: dropbox, chrome, firefox, transmission
+- [hide firefox tabs](https://superuser.com/questions/1268732/how-to-hide-tab-bar-tabstrip-in-firefox-57-quantum)
 - add ssh key
