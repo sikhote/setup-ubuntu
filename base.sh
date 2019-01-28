@@ -12,18 +12,29 @@ sudo dpkg -i ./google-chrome*.deb
 sudo apt -f install
 rm -rf google-chrome-stable_current_amd64.deb
 
-echo 'flatpak'
-sudo add-apt-repository ppa:alexlarsson/flatpak -y
-sudo apt update
-sudo apt install -y flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+echo 'dropbox'
+curl -o dropbox.deb -L https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2018.11.28_amd64.deb
+sudo dpkg -i ./dropbox.deb
+sudo apt -f install
+rm -rf dropbox.deb
 
-echo 'flatpak apps'
-flatpak install -y flathub com.dropbox.Client
-flatpak install -y flathub org.videolan.VLC
-flatpak install -y flathub com.transmissionbt.Transmission
-flatpak install -y flathub com.getpostman.Postman
-flatpak install -y flathub com.valvesoftware.Steam
+echo 'transmission'
+sudo apt-get install transmission -y
+
+echo 'steam'
+curl -o steam.deb -L https://steamcdn-a.akamaihd.net/client/installer/steam.deb
+sudo dpkg -i ./steam.deb
+sudo apt -f install
+rm -rf steam.deb
+
+echo 'snap'
+sudo apt update
+sudo apt install snapd
+
+echo 'snap apps'
+sudo snap install vlc
+sudo snap install postman
+sudo snap install paintsupreme-3d
 
 echo 'nvm'
 sudo apt install -y curl
@@ -61,7 +72,6 @@ curl -o code.deb -L http://go.microsoft.com/fwlink/?LinkID=760868
 sudo dpkg -i ./code.deb
 sudo apt -f install
 rm -rf code.deb
-
 code --install-extension be5invis.vscode-custom-css
 code --install-extension blanu.vscode-styled-jsx
 code --install-extension dbaeumer.vscode-eslint
@@ -73,8 +83,6 @@ code --install-extension samverschueren.linter-xo
 mkdir -p ~/.config/Code/User/snippets
 yes | cp vscode/settings.json ~/.config/Code/User/
 yes | cp vscode/snippets/* ~/.config/Code/User/snippets/
-mkdir -p ~/.vscode
-yes | cp vscode/custom.css ~/.vscode/custom.css
 
 echo 'desktop'
 cd ~/Downloads/setup-ubuntu-master/
