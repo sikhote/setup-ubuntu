@@ -40,10 +40,6 @@ sudo apt-get update && sudo apt-get install --no-install-recommends yarn
 echo "projects"
 mkdir -p ~/Projects
 
-echo "awscli"
-sudo apt-get install -y python-pip
-pip install awscli --upgrade --user
-
 echo 'bash-git-prompt'
 cd ~/
 git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
@@ -79,7 +75,3 @@ yes | cp vscode/snippets/* ~/.config/Code/User/snippets/
 echo 'desktop'
 cd ~/Downloads/setup-ubuntu-master/
 yes | cp desktop.jpg ~/Pictures
-
-echo 'sdk'
-curl -s "https://get.sdkman.io" | bash
-sdk install java
