@@ -7,7 +7,9 @@ cd ~/Downloads
 wget https://github.com/sikhote/setup-ubuntu/archive/master.zip
 unzip master.zip
 rm -rf master.zip
-chmod +x setup-ubuntu-master/beaver.sh; .setup-ubuntu-master/beaver.sh
+cd setup-ubuntu-master
+chmod +x beaver.sh
+. beaver.sh
 ```
 
 ## post install
