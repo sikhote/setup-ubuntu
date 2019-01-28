@@ -61,6 +61,8 @@ curl -o code.deb -L http://go.microsoft.com/fwlink/?LinkID=760868
 sudo dpkg -i ./code.deb
 sudo apt -f install
 rm -rf code.deb
+
+code --install-extension be5invis.vscode-custom-css
 code --install-extension blanu.vscode-styled-jsx
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension EditorConfig.EditorConfig
@@ -71,6 +73,8 @@ code --install-extension samverschueren.linter-xo
 mkdir -p ~/.config/Code/User/snippets
 yes | cp vscode/settings.json ~/.config/Code/User/
 yes | cp vscode/snippets/* ~/.config/Code/User/snippets/
+mkdir -p ~/.vscode
+yes | cp vscode/custom.css ~/.vscode/custom.css
 
 echo 'desktop'
 cd ~/Downloads/setup-ubuntu-master/

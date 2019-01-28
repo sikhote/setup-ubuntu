@@ -10,9 +10,8 @@
   "editor.wordWrap": "on",
   "editor.wrappingIndent": "indent",
   "xo.enable": true,
-  "explorer.confirmDragAndDrop": true,
-  "terminal.integrated.shell.linux": "/bin/bash",
-  "explorer.confirmDelete": false,
-  "window.restoreWindows": "all",
-  "editor.fontFamily": "'Meslo LG L', 'monospace', monospace"
+  "vscode_custom_css.imports": ["file:///home/beaver/.vscode/custom.css"],
+  "vscode_custom_css.policy": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "window.restoreWindows": "all"
 }
