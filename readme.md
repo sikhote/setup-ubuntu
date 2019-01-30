@@ -1,3 +1,7 @@
+Note: This is no longer updated. I wanted Linux to work well, but could not get the trackpad to work well enough.
+
+***
+
 # setup-ubuntu
 install as much as possible through cli
 
