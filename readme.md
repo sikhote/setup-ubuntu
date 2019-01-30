@@ -1,4 +1,4 @@
-Note: This is no longer updated. I wanted Linux to work well, but could not get the trackpad to work well enough.
+Note: This is no longer updated. I wanted Linux to work well, but could not get the trackpad to work well enough on a Dell XPS 13.
 
 ***
 
